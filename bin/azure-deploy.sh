@@ -108,7 +108,10 @@ if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
 fi
 
 # 2. Select node version
-selectNodeVersion
+#selectNodeVersion
+NPM_JS_PATH=/opt/nodejs/14.17.6/lib/node_modules/npm/bin/npm-cli.js
+NODE_EXE=/opt/nodejs/14.17.6/bin/node
+NPM_CMD="\"$NODE_EXE\" \"$NPM_JS_PATH\""
 
 # 3. Install npm packages
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
